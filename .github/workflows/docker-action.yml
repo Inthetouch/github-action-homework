@@ -46,4 +46,4 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/jupyter_custom_tested:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/jupyter_custom:latest
