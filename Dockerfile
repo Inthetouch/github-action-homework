@@ -1,7 +1,7 @@
 # Устанавливаем базовый образ Jupyter
 FROM jupyterhub/jupyterhub:latest
 # Устанавливаем jupyter_server
-RUN pip install jupyter_server
+RUN pip install jupyter_server jupyterlab
 # Указываем переменную окружения с именем администратора
 ARG ADMIN_USER=admin
 # Указываем переменную с паролем администратора
@@ -18,4 +18,4 @@ WORKDIR /data/jupyterhub
 RUN useradd -m ${ADMIN_USER}
 RUN echo "${ADMIN_USER}:${ADMIN_PASSWORD}" | chpasswd
 # Запускаем JupyterHub
-CMD ["jupyterhub"]
+CMD ["/usr/local/bin/jupyterhub"]
