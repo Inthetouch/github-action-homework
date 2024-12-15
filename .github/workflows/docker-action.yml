@@ -21,7 +21,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/jupyter_custom:latest --build-arg ADMIN_USER='inthe' .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/jupyter_custom:latest --build-arg ADMIN_USER='admin' .
 
       - name: Test Docker container
         run: |
